@@ -4,8 +4,141 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        input {
+    width: 50%; /* Faz com que os campos ocupem toda a largura disponível */
+    margin-bottom: 15px; /* Adiciona espaço entre os campos */
+    padding: 10px; /* Adiciona preenchimento interno nos campos */
+    border: 1px solid #ccc; /* Define uma borda cinza clara */
+    border-radius: 4px; /* Arredonda os cantos dos campos */
+}
+
+    </style>
 </head>
 <body>
-    
+    <form>
+    Nome:
+    <input type="text" id="name" placeholder="Digite seu nome completo" required>
+<!--
+    type="text" - Define que este campo é para texto.
+    placeholder - Exibe um texto indicativo quando o campo está vazio.
+    required - Torna este campo obrigatório para o envio do formulário.
+-->
+
+<input type="password" id="password" placeholder="Digite sua senha" required>
+<!--
+    type="password" - Oculta o texto digitado, útil para senhas.
+    placeholder - Indica que o usuário deve inserir sua senha.
+    required - Torna este campo obrigatório.
+-->
+
+<input type="email" id="email" placeholder="Digite seu e-mail" required>
+<!--
+    type="email" - Define que este campo deve receber um endereço de e-mail.
+    placeholder - Texto indicativo que aparece no campo.
+    required - Este campo também é obrigatório.
+-->
+
+<input type="number" id="age" placeholder="Digite sua idade" min="0" max="120" required>
+<!--
+    type="number" - Permite que o usuário insira apenas números.
+    placeholder - Texto indicativo.
+    min e max - Definem os limites de valores permitidos.
+    required - Torna este campo obrigatório.
+-->
+
+<input type="date" id="birthdate" required>
+<!--
+    type="date" - Permite a seleção de uma data usando um seletor de data.
+    required - Este campo é obrigatório.
+-->
+
+<input type="url" id="website" placeholder="Digite uma URL" required>
+<!--
+    type="url" - Define que este campo deve receber uma URL válida.
+    placeholder - Texto indicativo.
+    required - Este campo é obrigatório.
+-->
+
+<input type="checkbox" id="accept" required> Aceito os termos
+<!--
+    type="checkbox" - Permite ao usuário marcar ou desmarcar um item.
+    required - Este campo é obrigatório se for necessário aceitar os termos.
+-->
+
+<input type="radio" name="gender" id="male" value="male"> Masculino
+<input type="radio" name="gender" id="female" value="female"> Feminino
+<!--
+    type="radio" - Permite selecionar apenas uma opção de um grupo.
+    name - Agrupa os botões de rádio, permitindo a seleção de apenas um.
+-->
+
+<input type="submit" value="Enviar">
+<!--
+    type="submit" - Cria um botão que envia o formulário quando clicado.
+    value - Define o texto que será exibido no botão.
+-->
+
+<input type="file" id="file-upload">
+<!--
+    type="file" - Permite que o usuário selecione um arquivo do sistema.
+-->
+
+<input type="datetime-local" value="2023-10-08T14:30"> <!-- 
+    Permite ao usuário escolher uma data e uma hora específicas 
+    em um formato local. O valor inicial é configurado para 
+    8 de outubro de 2023 às 14:30.
+-->
+
+<input type="range" min="0" max="100" value="50"> <!-- 
+    Cria um controle deslizante que permite ao usuário escolher um valor 
+    entre 0 e 100. O valor inicial do controle é 50.
+-->
+
+
+<input type="search" placeholder="Pesquisar..."> <!-- 
+    Campo específico para entrada de texto de busca. O texto no 
+    placeholder serve como uma dica para o usuário sobre o que 
+    deve ser digitado no campo.
+-->
+
+<input type="submit" value="Enviar"> <!-- 
+    Cria um botão que, quando clicado, envia os dados do formulário 
+    para o servidor para processamento.
+-->
+
+<input type="tel" placeholder="(xx) xxxxx-xxxx"> <!-- 
+    Campo destinado à entrada de números de telefone. Geralmente, 
+    ativa o teclado numérico em dispositivos móveis, e o placeholder 
+    fornece um exemplo do formato esperado.
+-->
+
+<input type="time" value="12:00"> <!-- 
+    Permite ao usuário escolher uma hora específica. O valor 
+    inicial exibido é 12:00.
+-->
+
+<input type="week" value="2023-W40"> <!-- 
+    Campo que permite selecionar uma semana específica do ano, 
+    formatada como "AAAA-W##". O valor inicial é a 40ª semana de 2023.
+-->
+
+<input type="month" value="2023-10"> <!-- 
+    Permite ao usuário escolher um mês e um ano específicos. 
+    O valor inicial exibido é outubro de 2023.
+-->
+
+<input type="color" value="#ff0000"> <!-- 
+    Cria um campo que permite ao usuário escolher uma cor. O valor 
+    inicial é configurado para vermelho (código hexadecimal #ff0000). 
+    Quando o usuário clica neste campo, uma paleta de cores aparece 
+    para que ele possa selecionar a cor desejada.
+-->
+<!--</form>
+<form>-->
+
+        <input type="text" placeholder="Digite algo aqui...">
+        <input type="reset" value="Limpar"> 
+</form>
 </body>
 </html>
