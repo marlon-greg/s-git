@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exemplo de Pattern</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif; /* Define a fonte padrão para o corpo da página */
+            padding: 20px; /* Adiciona espaçamento ao redor do conteúdo */
+        }
+        form {
+            margin-top: 20px; /* Espaçamento acima do formulário */
+        }
+        input {
+            padding: 10px; /* Espaçamento interno do campo de entrada */
+            width: 100%; /* Campo ocupa toda a largura disponível */
+            max-width: 300px; /* Define a largura máxima do campo */
+            border: 1px solid #ccc; /* Borda cinza ao redor do campo */
+            border-radius: 4px; /* Bordas arredondadas */
+        }
+        input:invalid {
+            border-color: red; /* Altera a cor da borda para vermelho se o campo for inválido */
+        }
+        input:valid {
+            border-color: green; /* Altera a cor da borda para verde se o campo for válido */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Formulário de Cadastro</h1>
+    <form>
+        <label for="username">Nome de Usuário (letras e números, 3-12 caracteres):</label>
+        <input type="text" id="username" name="username" 
+            pattern="[a-zA-Z0-9]{3,12}" 
+            required title="O nome de usuário deve conter apenas letras e números, com 3 a 12 caracteres.">
+        <input type="submit" value="Cadastrar">
+    </form>
+
+</body>
+</html>
