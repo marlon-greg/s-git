@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Navbar Responsiva</title>
+  <style>
+    /* Reset de margem e padding */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box; /* Garante que padding e border sejam incluídos nas dimensões totais do elemento */
+    }
+
+    /* Estilo do corpo da página */
+    body {
+      font-family: Arial, sans-serif; /* Define a fonte padrão */
+    }
+
+    /* Estilo geral da barra de navegação */
+    nav {
+      background-color: #333; /* Define a cor de fundo */
+      padding: 10px 20px; /* Define o espaçamento interno */
+      display: flex; /* Faz os itens dentro da navbar ficarem na mesma linha */
+      justify-content: space-between; /* Distribui o conteúdo igualmente entre os lados */
+      align-items: center; /* Centraliza os itens verticalmente */
+    }
+
+    /* Estilo do logo */
+    .logo {
+      color: white; /* Cor do texto da logo */
+      font-size: 24px; /* Tamanho da fonte */
+      font-weight: bold; /* Negrito no texto da logo */
+    }
+
+    /* Oculta o checkbox */
+    #menu-toggle {
+      display: none; /* Não mostra o checkbox, pois ele só controla o estado do menu */
+    }
+
+    /* Estilo do menu hambúrguer */
+    .menu-btn {
+      display: none; /* Oculto inicialmente em telas grandes */
+      flex-direction: column; /* Faz as barras ficarem empilhadas verticalmente */
+      cursor: pointer; /* Altera o cursor para uma mãozinha ao passar */
+    }
+
+    /* Estilo das barras do ícone de hambúrguer */
+    .hamburger {
+      width: 30px; /* Largura das barras */
+      height: 3px; /* Altura das barras */
+      background-color: white; /* Cor das barras */
+      margin: 5px 0; /* Espaçamento entre as barras */
+      transition: 0.4s; /* Transição suave quando animado */
+    }
+
+    /* Estilo dos links da navegação */
+    .nav-links {
+      display: flex; /* Faz os links ficarem em linha */
+      list-style: none; /* Remove os marcadores da lista */
+    }
+
+    /* Estilo dos itens da navegação */
+    .nav-links li {
+      margin-left: 20px; /* Espaçamento entre os links */
+    }
+
+    /* Estilo dos links */
+    .nav-links li a {
+      color: white; /* Cor do texto dos links */
+      text-decoration: none; /* Remove o sublinhado dos links */
+      padding: 8px 16px; /* Espaçamento interno dos links */
+    }
+
+    /* Exibe o ícone de hambúrguer apenas em telas pequenas */
+    @media (max-width: 768px) {
+      .menu-btn {
+        display: flex; /* Mostra o botão de menu hambúrguer */
+      }
+
+      /* Oculta os links de navegação em telas pequenas */
+      .nav-links {
+        display: none; /* Links escondidos inicialmente */
+        position: absolute; /* Links são retirados do fluxo da página */
+        top: 60px; /* Abaixo da navbar */
+        right: 0; /* Alinha à direita */
+        background-color: #333; /* Cor de fundo igual à navbar */
+        width: 100%; /* Ocupa a largura total da tela */
+        flex-direction: column; /* Links em formato de coluna */
+        text-align: center; /* Centraliza os links */
+      }
+
+      /* Mostra o menu quando o checkbox está marcado */
+      #menu-toggle:checked + .menu-btn + .nav-links {
+        display: flex; /* Mostra os links */
+      }
+
+      /* Anima a primeira barra do ícone para formar um "X" */
+      #menu-toggle:checked + .menu-btn .hamburger:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px); /* Rotaciona a barra */
+      }
+
+      /* Oculta a segunda barra ao clicar no menu */
+      #menu-toggle:checked + .menu-btn .hamburger:nth-child(2) {
+        opacity: 0; /* Deixa a barra invisível */
+      }
+
+      /* Anima a terceira barra para formar o "X" */
+      #menu-toggle:checked + .menu-btn .hamburger:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px); /* Rotaciona a barra */
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="logo">Minha Logo</div>
+
+    <!-- Checkbox controlando o menu -->
+    <input type="checkbox" id="menu-toggle">
+
+    <!-- Botão do menu hambúrguer -->
+    <div class="menu-btn">
+      <div class="hamburger"></div> <!-- Primeira barra -->
+      <div class="hamburger"></div> <!-- Segunda barra -->
+      <div class="hamburger"></div> <!-- Terceira barra -->
+    </div>
+
+    <!-- Links de navegação -->
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Sobre</a></li>
+      <li><a href="#">Serviços</a></li>
+      <li><a href="#">Contato</a></li>
+    </ul>
+  </nav>
+
+</body>
+</html>

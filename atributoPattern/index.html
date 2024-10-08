@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário com Pattern</title>
+</head>
+<body>
+    <form>
+        <label for="username">Nome de Usuário:</label>
+        <input type="text" id="username" name="username" 
+               pattern="[a-zA-Z0-9]{5,12}" 
+               title="O nome de usuário deve ter entre 5 a 12 caracteres, apenas letras e números." 
+               required>
+        <small>Use letras e números. 5-12 caracteres.</small>
+        <br><br>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" 
+               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+               title="Por favor, insira um email válido." 
+               required>
+        <small>Ex: exemplo@dominio.com</small>
+        <br><br>
+
+        <label for="senha">Senha:</label>
+        <input type="password" id="senha" name="senha" 
+               pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{8,}" 
+               title="A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula e um número." 
+               required>
+        <small>Mínimo de 8 caracteres, incluindo maiúscula e número.</small>
+        <br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
