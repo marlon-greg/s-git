@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+
+/*MODELO DE CONTAINER COM TAG - TAG PAI E TAG FILHO*/
+
+div > p {
+    color: red; /* Aplica a cor vermelha apenas ao parágrafo direto */
+}
+
+div > input {
+    border: 1px solid blue; /* Aplica borda azul apenas ao input dentro da div */
+}
+
+/*MODELO DE CONTAINER COM CLASSE - CLASSE PAI E CLASSE FILHO*/
+
+.pai > .filho {
+    color: blue; /* Aplica cor azul apenas aos filhos diretos */
+}
+
+/*MODELO DE CONTAINER COM CLASSE - CLASSE PAI E TAG FILHO*/
+.pai > p {
+    color: green; /* Aplica a cor verde apenas ao parágrafo direto dentro do elemento com a classe 'pai' */
+}
+
+/*MODELO DE CONTAINER COM CLASSE - TAG PAI E CLASSE FILHO*/
+
+div > .filho {
+    color: blue; /* Aplica cor azul apenas ao parágrafo com a classe 'filho' que é um filho direto do div */
+}
+
+
+
+    </style>
+</head>
+<body>
+
+<!-- MODELO DE CONTAINER COM TAG - TAG PAI E TAG FILHO -->
+
+    <div>
+        <p>Eu sou um parágrafo direto.</p>
+        <div>
+            <p>Eu sou um parágrafo dentro de um div.</p>
+        </div>
+    </div>
+
+<!--MODELO DE CONTAINER COM CLASSE - CLASSE PAI E CLASSE FILHO-->
+
+    <div class="pai">
+        <div class="filho">Eu sou um filho direto</div>
+        <div class="filho">
+            <div class="neta">Eu sou um neto</div>
+        </div>
+    </div>
+
+<!--TESTANDO QUE SÓ É APLICADO ONDE VOCÊ DIRECIONOU, MESMO SENDO DOIS INPUT, SÓ O QUE É FILHO IRÁ MUDAR-->
+    <input type="text" value="Eu sou um input direto.">
+
+        <div>
+            <input type="text" value="Eu sou um input dentro de um div.">
+        </div>
+    </div>
+
+<!--MODELO DE CONTAINER COM CLASSE - CLASSE PAI E TAG FILHO-->
+
+<div class="pai">
+    <p>Eu sou um parágrafo direto.</p>
+    <div>
+        <p>Eu sou um parágrafo dentro de um div.</p>
+    </div>
+</div>
+
+<!--MODELO DE CONTAINER COM CLASSE - TAG PAI E CLASSE FILHO-->
+
+<div>
+    <p class="filho">Eu sou um filho com classe.</p>
+    <div>
+        <p>Eu sou um parágrafo dentro de um div.</p>
+    </div>
+</div>
+
+
+</body>
+</html>
